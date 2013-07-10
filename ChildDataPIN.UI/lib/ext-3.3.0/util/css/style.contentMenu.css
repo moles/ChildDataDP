@@ -1,0 +1,81 @@
+/**El important hace que prevalezca sobre las otras clase.**/
+
+
+
+.title-box-container {
+    text-align: left;
+    vertical-align: top;
+    margin-top: 3px;
+    font-family: tahoma, arial, verdana, sans-serif;
+}
+
+.title-box-img {
+    float: left;    
+}
+
+.title-box-main {
+    vertical-align: middle;
+    padding: 8px;
+    background-repeat: no-repeat;    
+}
+
+.title-box-main-title {
+    color: white;
+    font-size: 12px;
+}
+
+.title-box-subtitle {
+    color: #15428B;
+    font-size: 14px;
+    background-repeat: no-repeat;    
+}
+
+.title-box-main span {
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.title-box-main span img {
+    vertical-align: middle;
+}
+
+.x-tree {
+    background: #fff !important;    
+}
+
+.x-tree-node div.menu-group {
+    background: #eee /**url(../images/advertencia.png)**/ repeat-x;
+    margin-top: 1px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ccc;
+    padding-top: 2px;
+    padding-bottom: 1px;
+}
+
+.menu-group .x-tree-node-icon {
+    display: none;
+}
+
+.menu-group a span {
+    font-weight: bold;
+    color: #222;
+}
+
+.menu-item {
+    border: 1px solid #fff;
+}
+
+.menu-item .x-tree-ec-icon {
+    display: none;
+}
+
+.x-tree-selected {
+    border: 1px dotted #a3bae9;
+    background: #DFE8F6;
+}
+
+.x-tree-node .x-tree-selected a span {
+    background: transparent;
+    color: #0073cf;
+    font-weight: bold;
+}

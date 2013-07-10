@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ChildDataPIN.DAL.SEG.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="ChildDataPINDALSEGStoreContainer">
+          <EntitySet Name="Usuario" EntityType="ChildDataPIN.DAL.SEG.Store.Usuario" store:Type="Tables" store:Schema="SEG" store:Name="Usuario">
+            <DefiningQuery>SELECT 
+      [Usuario].[IdUsuario] AS [IdUsuario], 
+      [Usuario].[primer_nombre] AS [primer_nombre], 
+      [Usuario].[segundo_nombre] AS [segundo_nombre], 
+      [Usuario].[primer_apellido] AS [primer_apellido], 
+      [Usuario].[segundo_apellido] AS [segundo_apellido], 
+      [Usuario].[alias] AS [alias], 
+      [Usuario].[activo] AS [activo], 
+      [Usuario].[regpor] AS [regpor], 
+      [Usuario].[regen] AS [regen], 
+      [Usuario].[regel] AS [regel], 
+      [Usuario].[actel] AS [actel], 
+      [Usuario].[actpor] AS [actpor], 
+      [Usuario].[acten] AS [acten]
+      FROM [SEG].[Usuario] AS [Usuario]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ChildDP_VW_Usuario" EntityType="ChildDataPIN.DAL.SEG.Store.ChildDP_VW_Usuario" store:Type="Views" store:Schema="SEG" store:Name="ChildDP_VW_Usuario">
+            <DefiningQuery>SELECT 
+      [ChildDP_VW_Usuario].[IdUsuario] AS [IdUsuario], 
+      [ChildDP_VW_Usuario].[primer_nombre] AS [primer_nombre], 
+      [ChildDP_VW_Usuario].[segundo_nombre] AS [segundo_nombre], 
+      [ChildDP_VW_Usuario].[primer_apellido] AS [primer_apellido], 
+      [ChildDP_VW_Usuario].[segundo_apellido] AS [segundo_apellido], 
+      [ChildDP_VW_Usuario].[alias] AS [alias], 
+      [ChildDP_VW_Usuario].[activo] AS [activo], 
+      [ChildDP_VW_Usuario].[regpor] AS [regpor], 
+      [ChildDP_VW_Usuario].[regen] AS [regen], 
+      [ChildDP_VW_Usuario].[regel] AS [regel], 
+      [ChildDP_VW_Usuario].[actel] AS [actel], 
+      [ChildDP_VW_Usuario].[actpor] AS [actpor], 
+      [ChildDP_VW_Usuario].[acten] AS [acten]
+      FROM [SEG].[ChildDP_VW_Usuario] AS [ChildDP_VW_Usuario]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'CHILDDATADP.SEG.Usuario' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="IdUsuario" />
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+          </Key>
+          <Property Name="IdUsuario" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="primer_nombre" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="segundo_nombre" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="primer_apellido" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="segundo_apellido" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="alias" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="activo" Type="bit" Nullable="false" />
+          <Property Name="regpor" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="regen" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="regel" Type="datetime" Nullable="false" />
+          <Property Name="actel" Type="datetime" Nullable="false" />
+          <Property Name="actpor" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="acten" Type="nvarchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'CHILDDATADP.SEG.ChildDP_VW_Usuario' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="ChildDP_VW_Usuario">
+          <Key>
+            <PropertyRef Name="IdUsuario" />
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+          </Key>
+          <Property Name="IdUsuario" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="primer_nombre" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="segundo_nombre" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="primer_apellido" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="segundo_apellido" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="alias" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="activo" Type="bit" Nullable="false" />
+          <Property Name="regpor" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="regen" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="regel" Type="datetime" Nullable="false" />
+          <Property Name="actel" Type="datetime" Nullable="false" />
+          <Property Name="actpor" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="acten" Type="nvarchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <Function Name="ChildDP_SP_Usuario_Actualizar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SEG">
+          <Parameter Name="IdUsuario" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="primer_nombre" Type="nvarchar" Mode="In" />
+          <Parameter Name="segundo_nombre" Type="nvarchar" Mode="In" />
+          <Parameter Name="primer_apellido" Type="nvarchar" Mode="In" />
+          <Parameter Name="segundo_apellido" Type="nvarchar" Mode="In" />
+          <Parameter Name="alias" Type="nvarchar" Mode="In" />
+          <Parameter Name="activo" Type="bit" Mode="In" />
+          <Parameter Name="regpor" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="regen" Type="nvarchar" Mode="In" />
+          <Parameter Name="regel" Type="datetime" Mode="In" />
+          <Parameter Name="actel" Type="datetime" Mode="In" />
+          <Parameter Name="actpor" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="acten" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="ChildDP_SP_Usuario_Insertar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SEG">
+          <Parameter Name="primer_nombre" Type="nvarchar" Mode="In" />
+          <Parameter Name="segundo_nombre" Type="nvarchar" Mode="In" />
+          <Parameter Name="primer_apellido" Type="nvarchar" Mode="In" />
+          <Parameter Name="segundo_apellido" Type="nvarchar" Mode="In" />
+          <Parameter Name="alias" Type="nvarchar" Mode="In" />
+          <Parameter Name="activo" Type="bit" Mode="In" />
+          <Parameter Name="regpor" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="regen" Type="nvarchar" Mode="In" />
+          <Parameter Name="regel" Type="datetime" Mode="In" />
+          <Parameter Name="actel" Type="datetime" Mode="In" />
+          <Parameter Name="actpor" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="acten" Type="nvarchar" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ChildDataPIN.DAL.SEG" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="SegEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Usuario" EntityType="ChildDataPIN.DAL.SEG.Usuario" />
+          <EntitySet Name="ChildDP_VW_Usuario" EntityType="ChildDataPIN.DAL.SEG.ChildDP_VW_Usuario" />
+          <FunctionImport Name="ChildDP_SP_Usuario_Insertar" ReturnType="Collection(Guid)">
+            <Parameter Name="primer_nombre" Mode="In" Type="String" />
+            <Parameter Name="segundo_nombre" Mode="In" Type="String" />
+            <Parameter Name="primer_apellido" Mode="In" Type="String" />
+            <Parameter Name="segundo_apellido" Mode="In" Type="String" />
+            <Parameter Name="alias" Mode="In" Type="String" />
+            <Parameter Name="activo" Mode="In" Type="Boolean" />
+            <Parameter Name="regpor" Mode="In" Type="Guid" />
+            <Parameter Name="regen" Mode="In" Type="String" />
+            <Parameter Name="regel" Mode="In" Type="DateTime" />
+            <Parameter Name="actel" Mode="In" Type="DateTime" />
+            <Parameter Name="actpor" Mode="In" Type="Guid" />
+            <Parameter Name="acten" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="ChildDP_SP_Usuario_Actualizar" ReturnType="Collection(Guid)">
+            <Parameter Name="IdUsuario" Mode="In" Type="Guid" />
+            <Parameter Name="primer_nombre" Mode="In" Type="String" />
+            <Parameter Name="segundo_nombre" Mode="In" Type="String" />
+            <Parameter Name="primer_apellido" Mode="In" Type="String" />
+            <Parameter Name="segundo_apellido" Mode="In" Type="String" />
+            <Parameter Name="alias" Mode="In" Type="String" />
+            <Parameter Name="activo" Mode="In" Type="Boolean" />
+            <Parameter Name="regpor" Mode="In" Type="Guid" />
+            <Parameter Name="regen" Mode="In" Type="String" />
+            <Parameter Name="regel" Mode="In" Type="DateTime" />
+            <Parameter Name="actel" Mode="In" Type="DateTime" />
+            <Parameter Name="actpor" Mode="In" Type="Guid" />
+            <Parameter Name="acten" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="IdUsuario" />
+          </Key>
+          <Property Type="Guid" Name="IdUsuario" Nullable="false" />
+          <Property Type="String" Name="primer_nombre" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="segundo_nombre" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="primer_apellido" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="segundo_apellido" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="alias" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="activo" Nullable="false" />
+          <Property Type="Guid" Name="regpor" Nullable="false" />
+          <Property Type="String" Name="regen" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="regel" Nullable="false" />
+          <Property Type="DateTime" Name="actel" Nullable="false" />
+          <Property Type="Guid" Name="actpor" Nullable="false" />
+          <Property Type="String" Name="acten" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ChildDP_VW_Usuario">
+          <Key>
+            <PropertyRef Name="IdUsuario" />
+          </Key>
+          <Property Type="Guid" Name="IdUsuario" Nullable="false" />
+          <Property Type="String" Name="primer_nombre" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="segundo_nombre" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="primer_apellido" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="segundo_apellido" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="alias" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="activo" Nullable="false" />
+          <Property Type="Guid" Name="regpor" Nullable="false" />
+          <Property Type="String" Name="regen" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="regel" Nullable="false" />
+          <Property Type="DateTime" Name="actel" Nullable="false" />
+          <Property Type="Guid" Name="actpor" Nullable="false" />
+          <Property Type="String" Name="acten" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ChildDataPINDALSEGStoreContainer" CdmEntityContainer="SegEntities">
+          <EntitySetMapping Name="Usuario">
+            <EntityTypeMapping TypeName="ChildDataPIN.DAL.SEG.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="acten" ColumnName="acten" />
+                <ScalarProperty Name="actpor" ColumnName="actpor" />
+                <ScalarProperty Name="actel" ColumnName="actel" />
+                <ScalarProperty Name="regel" ColumnName="regel" />
+                <ScalarProperty Name="regen" ColumnName="regen" />
+                <ScalarProperty Name="regpor" ColumnName="regpor" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+                <ScalarProperty Name="alias" ColumnName="alias" />
+                <ScalarProperty Name="segundo_apellido" ColumnName="segundo_apellido" />
+                <ScalarProperty Name="primer_apellido" ColumnName="primer_apellido" />
+                <ScalarProperty Name="segundo_nombre" ColumnName="segundo_nombre" />
+                <ScalarProperty Name="primer_nombre" ColumnName="primer_nombre" />
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ChildDP_VW_Usuario">
+            <EntityTypeMapping TypeName="ChildDataPIN.DAL.SEG.ChildDP_VW_Usuario">
+              <MappingFragment StoreEntitySet="ChildDP_VW_Usuario">
+                <ScalarProperty Name="acten" ColumnName="acten" />
+                <ScalarProperty Name="actpor" ColumnName="actpor" />
+                <ScalarProperty Name="actel" ColumnName="actel" />
+                <ScalarProperty Name="regel" ColumnName="regel" />
+                <ScalarProperty Name="regen" ColumnName="regen" />
+                <ScalarProperty Name="regpor" ColumnName="regpor" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+                <ScalarProperty Name="alias" ColumnName="alias" />
+                <ScalarProperty Name="segundo_apellido" ColumnName="segundo_apellido" />
+                <ScalarProperty Name="primer_apellido" ColumnName="primer_apellido" />
+                <ScalarProperty Name="segundo_nombre" ColumnName="segundo_nombre" />
+                <ScalarProperty Name="primer_nombre" ColumnName="primer_nombre" />
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="ChildDP_SP_Usuario_Insertar" FunctionName="ChildDataPIN.DAL.SEG.Store.ChildDP_SP_Usuario_Insertar" />
+          <FunctionImportMapping FunctionImportName="ChildDP_SP_Usuario_Actualizar" FunctionName="ChildDataPIN.DAL.SEG.Store.ChildDP_SP_Usuario_Actualizar" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="SegEntities">
+        <EntityTypeShape EntityType="ChildDataPIN.DAL.SEG.Usuario" Width="1.5" PointX="0.75" PointY="0.75" Height="3.5186979166666656" />
+        <EntityTypeShape EntityType="ChildDataPIN.DAL.SEG.ChildDP_VW_Usuario" Width="1.5" PointX="3.375" PointY="0.75" Height="3.5186979166666656" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1508ED24-BADA-4717-BE65-F81A8E2159EE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ChildDataPIN.BLL.Components.SEG</RootNamespace>
+    <AssemblyName>ChildDataPIN.BLL.Components.SEG</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="UsuarioBLL.cs" />
+    <Compile Include="SegBusinessComponent.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ChildDataPin.ApplicationHelper\ChildDataPIN.ApplicationHelper.csproj">
+      <Project>{D3ACE11E-1207-4313-95CF-F3C358016121}</Project>
+      <Name>ChildDataPIN.ApplicationHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ChildDataPIN.BLL.Components.BASE\ChildDataPIN.BLL.Components.BASE.csproj">
+      <Project>{67A07AAE-7CA1-47BB-8A98-854A6B70AD16}</Project>
+      <Name>ChildDataPIN.BLL.Components.BASE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ChildDataPIN.BLL.Entities.SEG\ChildDataPIN.BLL.Entities.SEG.csproj">
+      <Project>{7B4CEFE4-12FD-4189-92CF-158075B71D9A}</Project>
+      <Name>ChildDataPIN.BLL.Entities.SEG</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ChildDataPIN.DAL.BASE\ChildDataPIN.DAL.BASE.csproj">
+      <Project>{681E7CB9-0EF8-4685-BCCA-63582566F5C3}</Project>
+      <Name>ChildDataPIN.DAL.BASE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ChildDataPIN.DAL.SEG\ChildDataPIN.DAL.SEG.csproj">
+      <Project>{D0FEF9E3-395F-44C1-A7CB-325A0CB7311D}</Project>
+      <Name>ChildDataPIN.DAL.SEG</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

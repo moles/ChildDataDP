@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8E8F46CA-D6D7-4EA4-9930-52360A31063B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ChildDataPIN.DAL.COM</RootNamespace>
+    <AssemblyName>ChildDataPIN.DAL.COM</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DeudaComunicacionesDAL.cs" />
+    <Compile Include="Model\ComEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ComEntities.Context.tt</DependentUpon>
+      <CustomToolNamespace>ChildDataPIN.DAL.COM</CustomToolNamespace>
+    </Compile>
+    <Compile Include="Model\ComEntities.Context.Extensions.cs">
+      <DependentUpon>ComEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ComModuleDataAccess.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Model\ComEntities.edmx">
+      <CustomToolNamespace>ChildDataPIN.DAL.COM</CustomToolNamespace>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="Model\ComEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ComEntities.Context.cs</LastGenOutput>
+      <CustomToolNamespace>ChildDataPIN.DAL.COM</CustomToolNamespace>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ChildDataPin.ApplicationHelper\ChildDataPIN.ApplicationHelper.csproj">
+      <Project>{D3ACE11E-1207-4313-95CF-F3C358016121}</Project>
+      <Name>ChildDataPIN.ApplicationHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ChildDataPIN.BLL.Entities.COM\ChildDataPIN.BLL.Entities.COM.csproj">
+      <Project>{44D06D56-72A7-41C3-8158-40C792E8E001}</Project>
+      <Name>ChildDataPIN.BLL.Entities.COM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ChildDataPIN.DAL.BASE\ChildDataPIN.DAL.BASE.csproj">
+      <Project>{681E7CB9-0EF8-4685-BCCA-63582566F5C3}</Project>
+      <Name>ChildDataPIN.DAL.BASE</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

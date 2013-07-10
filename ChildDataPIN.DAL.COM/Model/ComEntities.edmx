@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ChildDataPIN.DAL.COM.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="ChildDataPINDALCOMStoreContainer">
+          <EntitySet Name="Deuda" EntityType="ChildDataPIN.DAL.COM.Store.Deuda" store:Type="Tables" Schema="COM" />
+        </EntityContainer>
+        <EntityType Name="Deuda">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SCNumber" Type="int" />
+          <Property Name="SCName" Type="nvarchar" MaxLength="255" />
+          <Property Name="NODescription" Type="nvarchar" MaxLength="255" />
+          <Property Name="SPNumber" Type="int" />
+          <Property Name="CommunicationType" Type="nvarchar" MaxLength="255" />
+          <Property Name="ResponseDue" Type="datetime" />
+          <Property Name="Location" Type="nvarchar" MaxLength="255" />
+          <Property Name="CommunityWorkerName" Type="nvarchar" MaxLength="255" />
+          <Property Name="ResponseStatus" Type="tinyint" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ChildDataPIN.DAL.COM" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="ComEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Deuda" EntityType="ChildDataPIN.DAL.COM.Deuda" />
+        </EntityContainer>
+        <EntityType Name="Deuda">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="SCNumber" />
+          <Property Type="String" Name="SCName" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NODescription" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="SPNumber" />
+          <Property Type="String" Name="CommunicationType" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="ResponseDue" />
+          <Property Type="String" Name="Location" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CommunityWorkerName" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="Byte" Name="ResponseStatus" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ChildDataPINDALCOMStoreContainer" CdmEntityContainer="ComEntities">
+          <EntitySetMapping Name="Deuda">
+            <EntityTypeMapping TypeName="ChildDataPIN.DAL.COM.Deuda">
+              <MappingFragment StoreEntitySet="Deuda">
+                <ScalarProperty Name="ResponseStatus" ColumnName="ResponseStatus" />
+                <ScalarProperty Name="CommunityWorkerName" ColumnName="CommunityWorkerName" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="ResponseDue" ColumnName="ResponseDue" />
+                <ScalarProperty Name="CommunicationType" ColumnName="CommunicationType" />
+                <ScalarProperty Name="SPNumber" ColumnName="SPNumber" />
+                <ScalarProperty Name="NODescription" ColumnName="NODescription" />
+                <ScalarProperty Name="SCName" ColumnName="SCName" />
+                <ScalarProperty Name="SCNumber" ColumnName="SCNumber" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="ComEntities" ZoomLevel="86">
+        <EntityTypeShape EntityType="ChildDataPIN.DAL.COM.Deuda" Width="1.5" PointX="0.75" PointY="0.75" Height="2.9417936197916656" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

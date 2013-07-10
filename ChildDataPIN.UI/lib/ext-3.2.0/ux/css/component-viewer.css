@@ -1,0 +1,245 @@
+.jewel-menu-container {
+    z-index: 999999;
+    position: absolute;	
+}
+
+#jewel-menu {
+    height: 45px;
+    background-image: url(../images/widget/jewel.png);
+	background-repeat:no-repeat;
+}
+
+#jewel-menu .x-btn-tl {
+    background-image: none;
+}
+
+#jewel-menu .x-btn-tr {
+    background-image: none;
+}
+
+#jewel-menu .x-btn-tc {
+    background-image: none;
+}
+
+#jewel-menu .x-btn-ml {
+    background-image: none;
+}
+
+#jewel-menu .x-btn-mr {
+    background-image: none;
+}
+
+#jewel-menu .x-btn-mc {
+    background-image: none;
+}
+
+#jewel-menu .x-btn-bl {
+    background-image: none;
+}
+
+#jewel-menu .x-btn-br {
+    background-image: none;
+}
+
+#jewel-menu .x-btn-bc {
+    background-image: none;
+}
+
+.title-box-container {
+    text-align: left;
+    vertical-align: top;
+    margin-top: 3px;
+    font-family: tahoma, arial, verdana, sans-serif;
+}
+
+.title-box-img {
+    float: left;
+    margin-left: 50px;
+}
+
+.title-box-main {
+    vertical-align: middle;
+    padding: 8px;
+    background-repeat: no-repeat;
+    margin-left: 60px;
+    padding-left: 50px;
+}
+
+.title-box-main-title {
+    color: black;
+    font-size: 12px;
+}
+
+.title-box-subtitle {
+    color: #15428B;
+    font-size: 14px;
+    background-repeat: no-repeat;
+    padding-left: 20px;
+}
+
+.title-box-main span {
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.title-box-main span img {
+    vertical-align: middle;
+}
+
+.x-tree {
+    background: #fff !important;
+}
+
+.x-tree-node div.menu-group {
+    background: #eee url(../images/cmp-bg.gif) repeat-x;
+    margin-top: 1px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ccc;
+    padding-top: 2px;
+    padding-bottom: 1px;
+}
+
+.menu-group .x-tree-node-icon {
+    display: none;
+}
+
+.menu-group a span {
+    font-weight: bold;
+    color: #222;
+}
+
+.menu-item {
+    border: 1px solid #fff;
+}
+
+.menu-item .x-tree-ec-icon {
+    display: none;
+}
+
+.x-tree-selected {
+    border: 1px dotted #a3bae9;
+    background: #DFE8F6;
+}
+
+.x-tree-node .x-tree-selected a span {
+    background: transparent;
+    color: #15428b;
+    font-weight: bold;
+}
+
+.save {
+    background-image: url(../images/application/save.png) !important;
+}
+
+.save-close {
+    background-image: url(../images/application/save_close.png) !important;
+}
+
+.save-as {
+    background-image: url(../images/application/save_as.png) !important;
+}
+
+.save-new {
+    background-image: url(../images/application/save_new.png) !important;
+}
+
+.new {
+    background-image: url(../images/application/new.png) !important;
+}
+
+.clear-form {
+    background-image: url(../images/application/clear-form.png) !important;
+}
+
+.search {
+    background-image: url(../images/application/search.png) !important;
+}
+
+.refresh {
+    background-image: url(../images/application/refresh.png) !important;
+}
+
+.print {
+    background-image: url(../images/application/print.png) !important;
+}
+
+.report {
+    background-image: url(../images/application/report.png) !important;
+}
+
+.action {
+    background-image: url(../images/application/action.png) !important;
+}
+
+.close {
+    background-image: url(../images/application/close.png) !important;
+}
+
+.help {
+    background-image: url(../images/application/help.png) !important;
+}
+
+.workflow {
+    background-image: url(../images/application/workflow.png) !important;
+}
+
+.attach {
+    background-image: url(../images/application/attach.png) !important;
+}
+
+.excel {
+    background-image: url(../images/application/file.xlsx.png) !important;
+}
+
+.x-form-lookup-field {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.x-form-item-readonly {
+    background: #E1EBFD !important;/*para que sobre escriba a las otras clases cuando sea asgnida esta*/
+}
+
+.x-form-input-restricted {
+     background: #E1EBFD !important;/*para que sobre escriba a las otras clases cuando sea asgnida esta*/
+	 background-repeat: no-repeat !important;
+	 background-position: left center !important;
+}
+
+.x-form-item-locked {
+    background-image: url(../images/widget/lock.png) !important;
+    background-position: right center !important;
+    background-repeat: no-repeat !important;
+	margin-right:4px;
+	/*padding-left:17px !important;*/
+}
+
+.x-form-item-restricted {
+    background-image: url(../images/widget/lock-disabled.png) !important;
+    background-position: right center !important;
+    background-repeat: no-repeat !important;
+	margin-right:4px;
+	/*padding-left:17px !important;*/   
+	
+}
+
+/*.x-form-item-disabled {
+    background-color: #E1EBFD;
+    background: #E1EBFD;
+    opacity: 0;    
+}*/
+
+a {
+    color: Black;
+    text-decoration: underline;
+}
+
+/*.x-form-item-warning {
+    color: RED;
+    background-image: url(../images/widget/warning.gif);
+    background-repeat: no-repeat;
+    background-position: left;
+    padding-left: 18px;
+}*/
+

@@ -1,0 +1,998 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ChildDataPIN.DAl.BASE.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="ChildDataPINDAlBASEStoreContainer">
+          <EntitySet Name="Coordinador" EntityType="ChildDataPIN.DAl.BASE.Store.Coordinador" store:Type="Tables" Schema="Base" />
+          <EntitySet Name="Entidad" EntityType="ChildDataPIN.DAl.BASE.Store.Entidad" store:Type="Tables" Schema="Base" />
+          <EntitySet Name="EstadoCoordinador" EntityType="ChildDataPIN.DAl.BASE.Store.EstadoCoordinador" store:Type="Tables" Schema="Base" />
+          <EntitySet Name="EstadoEntidad" EntityType="ChildDataPIN.DAl.BASE.Store.EstadoEntidad" store:Type="Tables" Schema="Base" />
+          <EntitySet Name="EstadoPersona" EntityType="ChildDataPIN.DAl.BASE.Store.EstadoPersona" store:Type="Tables" Schema="Base" />
+          <EntitySet Name="Persona" EntityType="ChildDataPIN.DAl.BASE.Store.Persona" store:Type="Tables" Schema="Base" />
+          <EntitySet Name="CoordinadorVista" EntityType="ChildDataPIN.DAl.BASE.Store.CoordinadorVista" store:Type="Views" store:Schema="Base" store:Name="CoordinadorVista">
+            <DefiningQuery>SELECT 
+      [CoordinadorVista].[IdCoordinador] AS [IdCoordinador], 
+      [CoordinadorVista].[IdEntidad] AS [IdEntidad], 
+      [CoordinadorVista].[NombreCompleto] AS [NombreCompleto], 
+      [CoordinadorVista].[Sexo] AS [Sexo], 
+      [CoordinadorVista].[Codigo] AS [Codigo], 
+      [CoordinadorVista].[IdEstadoCoordinador] AS [IdEstadoCoordinador], 
+      [CoordinadorVista].[EstadoCoordinador] AS [EstadoCoordinador], 
+      [CoordinadorVista].[Nota] AS [Nota], 
+      [CoordinadorVista].[CreadoPorIdUsuario] AS [CreadoPorIdUsuario], 
+      [CoordinadorVista].[CreadoPorUsuario] AS [CreadoPorUsuario], 
+      [CoordinadorVista].[CreadoEn] AS [CreadoEn], 
+      [CoordinadorVista].[CreadoEl] AS [CreadoEl], 
+      [CoordinadorVista].[ModificadoPorIdUsuario] AS [ModificadoPorIdUsuario], 
+      [CoordinadorVista].[ModificadoPorUsuario] AS [ModificadoPorUsuario], 
+      [CoordinadorVista].[ModificadoEn] AS [ModificadoEn], 
+      [CoordinadorVista].[ModificadoEl] AS [ModificadoEl]
+      FROM [Base].[CoordinadorVista] AS [CoordinadorVista]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="EntidadVista" EntityType="ChildDataPIN.DAl.BASE.Store.EntidadVista" store:Type="Views" store:Schema="Base" store:Name="EntidadVista">
+            <DefiningQuery>SELECT 
+      [EntidadVista].[IdEntidad] AS [IdEntidad], 
+      [EntidadVista].[IdTipoEntidad] AS [IdTipoEntidad], 
+      [EntidadVista].[TipoEntidad] AS [TipoEntidad], 
+      [EntidadVista].[IdEstadoEntidad] AS [IdEstadoEntidad], 
+      [EntidadVista].[EstadoEntidad] AS [EstadoEntidad], 
+      [EntidadVista].[IdTipoIdentificacion] AS [IdTipoIdentificacion], 
+      [EntidadVista].[TipoIdentificacion] AS [TipoIdentificacion], 
+      [EntidadVista].[CodigoIdentificacion] AS [CodigoIdentificacion], 
+      [EntidadVista].[Direccion] AS [Direccion], 
+      [EntidadVista].[Telefono] AS [Telefono], 
+      [EntidadVista].[Email] AS [Email], 
+      [EntidadVista].[PrimerNombre] AS [PrimerNombre], 
+      [EntidadVista].[SegundoNombre] AS [SegundoNombre], 
+      [EntidadVista].[PrimerApellido] AS [PrimerApellido], 
+      [EntidadVista].[SegundoApellido] AS [SegundoApellido], 
+      [EntidadVista].[Celular] AS [Celular], 
+      [EntidadVista].[IdTipoSexo] AS [IdTipoSexo], 
+      [EntidadVista].[TipoSexo] AS [TipoSexo], 
+      [EntidadVista].[FechaNacimiento] AS [FechaNacimiento], 
+      [EntidadVista].[Nota] AS [Nota], 
+      [EntidadVista].[Organizacion] AS [Organizacion], 
+      [EntidadVista].[CreadoPorIdUsuario] AS [CreadoPorIdUsuario], 
+      [EntidadVista].[CreadoPorUsuario] AS [CreadoPorUsuario], 
+      [EntidadVista].[CreadoEn] AS [CreadoEn], 
+      [EntidadVista].[CreadoEl] AS [CreadoEl], 
+      [EntidadVista].[ModificadoPorIdUsuario] AS [ModificadoPorIdUsuario], 
+      [EntidadVista].[ModificadoPorUsuario] AS [ModificadoPorUsuario], 
+      [EntidadVista].[ModificadoEn] AS [ModificadoEn], 
+      [EntidadVista].[ModificadoEl] AS [ModificadoEl]
+      FROM [Base].[EntidadVista] AS [EntidadVista]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="EntidadVistaBasePersona" EntityType="ChildDataPIN.DAl.BASE.Store.EntidadVistaBasePersona" store:Type="Views" store:Schema="Base" store:Name="EntidadVistaBasePersona">
+            <DefiningQuery>SELECT 
+      [EntidadVistaBasePersona].[IdEntidad] AS [IdEntidad], 
+      [EntidadVistaBasePersona].[NombreCompleto] AS [NombreCompleto], 
+      [EntidadVistaBasePersona].[Sexo] AS [Sexo], 
+      [EntidadVistaBasePersona].[IdEstadoEntidad] AS [IdEstadoEntidad], 
+      [EntidadVistaBasePersona].[EstadoEntidad] AS [EstadoEntidad]
+      FROM [Base].[EntidadVistaBasePersona] AS [EntidadVistaBasePersona]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Coordinador_Entidad" Association="ChildDataPIN.DAl.BASE.Store.FK_Coordinador_Entidad">
+            <End Role="Entidad" EntitySet="Entidad" />
+            <End Role="Coordinador" EntitySet="Coordinador" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Coordinador_EstadoCoordinador" Association="ChildDataPIN.DAl.BASE.Store.FK_Coordinador_EstadoCoordinador">
+            <End Role="EstadoCoordinador" EntitySet="EstadoCoordinador" />
+            <End Role="Coordinador" EntitySet="Coordinador" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Entidad_EstadoEntidad" Association="ChildDataPIN.DAl.BASE.Store.FK_Entidad_EstadoEntidad">
+            <End Role="EstadoEntidad" EntitySet="EstadoEntidad" />
+            <End Role="Entidad" EntitySet="Entidad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Persona_Entidad1" Association="ChildDataPIN.DAl.BASE.Store.FK_Persona_Entidad1">
+            <End Role="Entidad" EntitySet="Entidad" />
+            <End Role="Persona" EntitySet="Persona" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Persona_EstadoPersona" Association="ChildDataPIN.DAl.BASE.Store.FK_Persona_EstadoPersona">
+            <End Role="EstadoPersona" EntitySet="EstadoPersona" />
+            <End Role="Persona" EntitySet="Persona" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Coordinador">
+          <Key>
+            <PropertyRef Name="IdCoordinador" />
+          </Key>
+          <Property Name="IdCoordinador" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IdEntidad" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Codigo" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="IdEstadoCoordinador" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Nota" Type="nvarchar(max)" />
+          <Property Name="CreadoPorIdUsuario" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreadoEn" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="CreadoEl" Type="datetime" Nullable="false" />
+          <Property Name="ModificadoPorIdUsuario" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ModificadoEn" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ModificadoEl" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Entidad">
+          <Key>
+            <PropertyRef Name="IdEntidad" />
+          </Key>
+          <Property Name="IdEntidad" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IdTipoEntidad" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IdEstadoEntidad" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IdTipoIdentificacion" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CodigoIdentificacion" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Direccion" Type="nvarchar" MaxLength="300" />
+          <Property Name="Telefono" Type="int" />
+          <Property Name="Email" Type="nvarchar" MaxLength="150" />
+          <Property Name="CreadoPorIdUsuario" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreadoEn" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="CreadoEl" Type="datetime" Nullable="false" />
+          <Property Name="ModificadoPorIdUsuario" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ModificadoEn" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ModificadoEl" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EstadoCoordinador">
+          <Key>
+            <PropertyRef Name="IdEstadoCoordinador" />
+          </Key>
+          <Property Name="IdEstadoCoordinador" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="CreadoPorIdUsuario" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreadoEn" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="CreadoEl" Type="datetime" Nullable="false" />
+          <Property Name="ModificadoPorIdUsuario" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ModificadoEn" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ModificadoEl" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EstadoEntidad">
+          <Key>
+            <PropertyRef Name="IdEstadoEntidad" />
+          </Key>
+          <Property Name="IdEstadoEntidad" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="CreadoPorIdUsuario" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreadoEn" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="CreadoEl" Type="datetime" Nullable="false" />
+          <Property Name="ModificadoPorIdUsuario" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ModificadoEn" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ModificadoEl" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EstadoPersona">
+          <Key>
+            <PropertyRef Name="IdEstadoPersona" />
+          </Key>
+          <Property Name="IdEstadoPersona" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="CreadoPorIdUsuario" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreadoEn" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="CreadoEl" Type="datetime" Nullable="false" />
+          <Property Name="ModificadoPorIdUsuario" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ModificadoEn" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ModificadoEl" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Persona">
+          <Key>
+            <PropertyRef Name="IdPersona" />
+          </Key>
+          <Property Name="IdPersona" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IdEntidad" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IdEstadoPersona" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PrimerNombre" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="SegundoNombre" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="PrimerApellido" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="SegundoApellido" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="Celular" Type="int" />
+          <Property Name="IdTipoSexo" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FechaNacimiento" Type="nchar" MaxLength="10" />
+          <Property Name="Nota" Type="nvarchar(max)" />
+          <Property Name="CreadoPorIdUsuario" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreadoEn" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="CreadoEl" Type="datetime" Nullable="false" />
+          <Property Name="ModificadoPorIdUsuario" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ModificadoEn" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ModificadoEl" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'CHILDDATADP.Base.CoordinadorVista' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="CoordinadorVista">
+          <Key>
+            <PropertyRef Name="IdCoordinador" />
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+          </Key>
+          <Property Name="IdCoordinador" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IdEntidad" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="NombreCompleto" Type="nvarchar" Nullable="false" MaxLength="603" />
+          <Property Name="Sexo" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="Codigo" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="IdEstadoCoordinador" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="EstadoCoordinador" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="Nota" Type="nvarchar(max)" />
+          <Property Name="CreadoPorIdUsuario" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreadoPorUsuario" Type="varchar" Nullable="false" MaxLength="13" />
+          <Property Name="CreadoEn" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="CreadoEl" Type="datetime" Nullable="false" />
+          <Property Name="ModificadoPorIdUsuario" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ModificadoPorUsuario" Type="varchar" Nullable="false" MaxLength="13" />
+          <Property Name="ModificadoEn" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ModificadoEl" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'CHILDDATADP.Base.EntidadVista' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="EntidadVista">
+          <Key>
+            <PropertyRef Name="IdEntidad" />
+            <PropertyRef Name="IdTipoEntidad" />
+            <PropertyRef Name="TipoEntidad" />
+            <PropertyRef Name="IdEstadoEntidad" />
+            <PropertyRef Name="EstadoEntidad" />
+            <PropertyRef Name="IdTipoIdentificacion" />
+            <PropertyRef Name="TipoIdentificacion" />
+            <PropertyRef Name="CodigoIdentificacion" />
+            <PropertyRef Name="CreadoPorIdUsuario" />
+            <PropertyRef Name="CreadoPorUsuario" />
+            <PropertyRef Name="CreadoEn" />
+            <PropertyRef Name="CreadoEl" />
+            <PropertyRef Name="ModificadoPorIdUsuario" />
+            <PropertyRef Name="ModificadoPorUsuario" />
+            <PropertyRef Name="ModificadoEn" />
+            <PropertyRef Name="ModificadoEl" />
+          </Key>
+          <Property Name="IdEntidad" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IdTipoEntidad" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TipoEntidad" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="IdEstadoEntidad" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="EstadoEntidad" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="IdTipoIdentificacion" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TipoIdentificacion" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="CodigoIdentificacion" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Direccion" Type="nvarchar" MaxLength="300" />
+          <Property Name="Telefono" Type="int" />
+          <Property Name="Email" Type="nvarchar" MaxLength="150" />
+          <Property Name="PrimerNombre" Type="nvarchar" MaxLength="150" />
+          <Property Name="SegundoNombre" Type="nvarchar" MaxLength="150" />
+          <Property Name="PrimerApellido" Type="nvarchar" MaxLength="150" />
+          <Property Name="SegundoApellido" Type="nvarchar" MaxLength="150" />
+          <Property Name="Celular" Type="int" />
+          <Property Name="IdTipoSexo" Type="uniqueidentifier" />
+          <Property Name="TipoSexo" Type="nvarchar" MaxLength="150" />
+          <Property Name="FechaNacimiento" Type="nchar" MaxLength="10" />
+          <Property Name="Nota" Type="nvarchar(max)" />
+          <Property Name="Organizacion" Type="nvarchar" MaxLength="150" />
+          <Property Name="CreadoPorIdUsuario" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreadoPorUsuario" Type="varchar" Nullable="false" MaxLength="13" />
+          <Property Name="CreadoEn" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="CreadoEl" Type="datetime" Nullable="false" />
+          <Property Name="ModificadoPorIdUsuario" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ModificadoPorUsuario" Type="varchar" Nullable="false" MaxLength="13" />
+          <Property Name="ModificadoEn" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ModificadoEl" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'CHILDDATADP.Base.EntidadVistaBasePersona' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="EntidadVistaBasePersona">
+          <Key>
+            <PropertyRef Name="IdEntidad" />
+            
+            
+            
+            
+          </Key>
+          <Property Name="IdEntidad" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="NombreCompleto" Type="nvarchar" Nullable="false" MaxLength="603" />
+          <Property Name="Sexo" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="IdEstadoEntidad" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="EstadoEntidad" Type="nvarchar" Nullable="false" MaxLength="150" />
+        </EntityType>
+        <Association Name="FK_Coordinador_Entidad">
+          <End Role="Entidad" Type="ChildDataPIN.DAl.BASE.Store.Entidad" Multiplicity="1" />
+          <End Role="Coordinador" Type="ChildDataPIN.DAl.BASE.Store.Coordinador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Entidad">
+              <PropertyRef Name="IdEntidad" />
+            </Principal>
+            <Dependent Role="Coordinador">
+              <PropertyRef Name="IdEntidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Coordinador_EstadoCoordinador">
+          <End Role="EstadoCoordinador" Type="ChildDataPIN.DAl.BASE.Store.EstadoCoordinador" Multiplicity="1" />
+          <End Role="Coordinador" Type="ChildDataPIN.DAl.BASE.Store.Coordinador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EstadoCoordinador">
+              <PropertyRef Name="IdEstadoCoordinador" />
+            </Principal>
+            <Dependent Role="Coordinador">
+              <PropertyRef Name="IdEstadoCoordinador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Entidad_EstadoEntidad">
+          <End Role="EstadoEntidad" Type="ChildDataPIN.DAl.BASE.Store.EstadoEntidad" Multiplicity="1" />
+          <End Role="Entidad" Type="ChildDataPIN.DAl.BASE.Store.Entidad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EstadoEntidad">
+              <PropertyRef Name="IdEstadoEntidad" />
+            </Principal>
+            <Dependent Role="Entidad">
+              <PropertyRef Name="IdEstadoEntidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Persona_Entidad1">
+          <End Role="Entidad" Type="ChildDataPIN.DAl.BASE.Store.Entidad" Multiplicity="1" />
+          <End Role="Persona" Type="ChildDataPIN.DAl.BASE.Store.Persona" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Entidad">
+              <PropertyRef Name="IdEntidad" />
+            </Principal>
+            <Dependent Role="Persona">
+              <PropertyRef Name="IdEntidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Persona_EstadoPersona">
+          <End Role="EstadoPersona" Type="ChildDataPIN.DAl.BASE.Store.EstadoPersona" Multiplicity="1" />
+          <End Role="Persona" Type="ChildDataPIN.DAl.BASE.Store.Persona" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EstadoPersona">
+              <PropertyRef Name="IdEstadoPersona" />
+            </Principal>
+            <Dependent Role="Persona">
+              <PropertyRef Name="IdEstadoPersona" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="CoordinadorActualizar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Base">
+          <Parameter Name="IdCoordinador" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="IdEntidad" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Codigo" Type="varchar" Mode="In" />
+          <Parameter Name="IdEstadoCoordinador" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Nota" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="ModificadoPorIdUsuario" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="ModificadoEn" Type="nvarchar" Mode="In" />
+          <Parameter Name="ModificadoEl" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="CoordinadorCambioDeEstado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Base">
+          <Parameter Name="IdCoordinador" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="IdEstadoCoordinador" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="ModificadoPorIdUsuario" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="ModificadoEn" Type="nvarchar" Mode="In" />
+          <Parameter Name="ModificadoEl" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="CoordinadorInsertar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Base">
+          <Parameter Name="IdEntidad" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Codigo" Type="varchar" Mode="In" />
+          <Parameter Name="IdEstadoCoordinador" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Nota" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="CreadoPorIdUsuario" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="CreadoEn" Type="nvarchar" Mode="In" />
+          <Parameter Name="CreadoEl" Type="datetime" Mode="In" />
+          <Parameter Name="ModificadoPorIdUsuario" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="ModificadoEn" Type="nvarchar" Mode="In" />
+          <Parameter Name="ModificadoEl" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="EntidadActualizar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Base">
+          <Parameter Name="IdEntidad" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="IdTipoEntidad" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="IdEstadoEntidad" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="IdTipoIdentificacion" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="CodigoIdentificacion" Type="nvarchar" Mode="In" />
+          <Parameter Name="Direccion" Type="nvarchar" Mode="In" />
+          <Parameter Name="Telefono" Type="int" Mode="In" />
+          <Parameter Name="Email" Type="nvarchar" Mode="In" />
+          <Parameter Name="ModificadoPorIdUsuario" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="ModificadoEn" Type="nvarchar" Mode="In" />
+          <Parameter Name="ModificadoEl" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="EntidadInsertar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Base">
+          <Parameter Name="IdTipoEntidad" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="IdEstadoEntidad" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="IdTipoIdentificacion" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="CodigoIdentificacion" Type="nvarchar" Mode="In" />
+          <Parameter Name="Direccion" Type="nvarchar" Mode="In" />
+          <Parameter Name="Telefono" Type="int" Mode="In" />
+          <Parameter Name="Email" Type="nvarchar" Mode="In" />
+          <Parameter Name="CreadoPorIdUsuario" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="CreadoEn" Type="nvarchar" Mode="In" />
+          <Parameter Name="CreadoEl" Type="datetime" Mode="In" />
+          <Parameter Name="ModificadoPorIdUsuario" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="ModificadoEn" Type="nvarchar" Mode="In" />
+          <Parameter Name="ModificadoEl" Type="datetime" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ChildDataPIN.DAl.BASE" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="BaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Coordinador" EntityType="ChildDataPIN.DAl.BASE.Coordinador" />
+          <EntitySet Name="Entidad" EntityType="ChildDataPIN.DAl.BASE.Entidad" />
+          <EntitySet Name="EstadoCoordinador" EntityType="ChildDataPIN.DAl.BASE.EstadoCoordinador" />
+          <AssociationSet Name="FK_Coordinador_Entidad" Association="ChildDataPIN.DAl.BASE.FK_Coordinador_Entidad">
+            <End Role="Entidad" EntitySet="Entidad" />
+            <End Role="Coordinador" EntitySet="Coordinador" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Coordinador_EstadoCoordinador" Association="ChildDataPIN.DAl.BASE.FK_Coordinador_EstadoCoordinador">
+            <End Role="EstadoCoordinador" EntitySet="EstadoCoordinador" />
+            <End Role="Coordinador" EntitySet="Coordinador" />
+          </AssociationSet>
+          <FunctionImport Name="CoordinadorInsertar" ReturnType="Collection(Guid)">
+            <Parameter Name="IdEntidad" Mode="In" Type="Guid" />
+            <Parameter Name="Codigo" Mode="In" Type="String" />
+            <Parameter Name="IdEstadoCoordinador" Mode="In" Type="Guid" />
+            <Parameter Name="Nota" Mode="In" Type="String" />
+            <Parameter Name="CreadoPorIdUsuario" Mode="In" Type="Guid" />
+            <Parameter Name="CreadoEn" Mode="In" Type="String" />
+            <Parameter Name="CreadoEl" Mode="In" Type="DateTime" />
+            <Parameter Name="ModificadoPorIdUsuario" Mode="In" Type="Guid" />
+            <Parameter Name="ModificadoEn" Mode="In" Type="String" />
+            <Parameter Name="ModificadoEl" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="CoordinadorActualizar" ReturnType="Collection(Guid)">
+            <Parameter Name="IdCoordinador" Mode="In" Type="Guid" />
+            <Parameter Name="IdEntidad" Mode="In" Type="Guid" />
+            <Parameter Name="Codigo" Mode="In" Type="String" />
+            <Parameter Name="IdEstadoCoordinador" Mode="In" Type="Guid" />
+            <Parameter Name="Nota" Mode="In" Type="String" />
+            <Parameter Name="ModificadoPorIdUsuario" Mode="In" Type="Guid" />
+            <Parameter Name="ModificadoEn" Mode="In" Type="String" />
+            <Parameter Name="ModificadoEl" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="CoordinadorCambioDeEstado" ReturnType="Collection(Guid)">
+            <Parameter Name="IdCoordinador" Mode="In" Type="Guid" />
+            <Parameter Name="IdEstadoCoordinador" Mode="In" Type="Guid" />
+            <Parameter Name="ModificadoPorIdUsuario" Mode="In" Type="Guid" />
+            <Parameter Name="ModificadoEn" Mode="In" Type="String" />
+            <Parameter Name="ModificadoEl" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <EntitySet Name="EstadoPersona" EntityType="ChildDataPIN.DAl.BASE.EstadoPersona" />
+          <EntitySet Name="Persona" EntityType="ChildDataPIN.DAl.BASE.Persona" />
+          <EntitySet Name="EntidadVistaBasePersona" EntityType="ChildDataPIN.DAl.BASE.EntidadVistaBasePersona" />
+          <AssociationSet Name="FK_Persona_Entidad1" Association="ChildDataPIN.DAl.BASE.FK_Persona_Entidad1">
+            <End Role="Entidad" EntitySet="Entidad" />
+            <End Role="Persona" EntitySet="Persona" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Persona_EstadoPersona" Association="ChildDataPIN.DAl.BASE.FK_Persona_EstadoPersona">
+            <End Role="EstadoPersona" EntitySet="EstadoPersona" />
+            <End Role="Persona" EntitySet="Persona" />
+          </AssociationSet>
+          <EntitySet Name="CoordinadorVista" EntityType="ChildDataPIN.DAl.BASE.CoordinadorVista" />
+          <EntitySet Name="EntidadVista" EntityType="ChildDataPIN.DAl.BASE.EntidadVista" />
+          <FunctionImport Name="EntidadInsertar" ReturnType="Collection(Guid)">
+            <Parameter Name="IdTipoEntidad" Mode="In" Type="Guid" />
+            <Parameter Name="IdEstadoEntidad" Mode="In" Type="Guid" />
+            <Parameter Name="IdTipoIdentificacion" Mode="In" Type="Guid" />
+            <Parameter Name="CodigoIdentificacion" Mode="In" Type="String" />
+            <Parameter Name="Direccion" Mode="In" Type="String" />
+            <Parameter Name="Telefono" Mode="In" Type="Int32" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="CreadoPorIdUsuario" Mode="In" Type="Guid" />
+            <Parameter Name="CreadoEn" Mode="In" Type="String" />
+            <Parameter Name="CreadoEl" Mode="In" Type="DateTime" />
+            <Parameter Name="ModificadoPorIdUsuario" Mode="In" Type="Guid" />
+            <Parameter Name="ModificadoEn" Mode="In" Type="String" />
+            <Parameter Name="ModificadoEl" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="EntidadActualizar" ReturnType="Collection(Guid)">
+            <Parameter Name="IdEntidad" Mode="In" Type="Guid" />
+            <Parameter Name="IdTipoEntidad" Mode="In" Type="Guid" />
+            <Parameter Name="IdEstadoEntidad" Mode="In" Type="Guid" />
+            <Parameter Name="IdTipoIdentificacion" Mode="In" Type="Guid" />
+            <Parameter Name="CodigoIdentificacion" Mode="In" Type="String" />
+            <Parameter Name="Direccion" Mode="In" Type="String" />
+            <Parameter Name="Telefono" Mode="In" Type="Int32" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="ModificadoPorIdUsuario" Mode="In" Type="Guid" />
+            <Parameter Name="ModificadoEn" Mode="In" Type="String" />
+            <Parameter Name="ModificadoEl" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <EntitySet Name="EstadoEntidad" EntityType="ChildDataPIN.DAl.BASE.EstadoEntidad" />
+          <AssociationSet Name="FK_Entidad_EstadoEntidad" Association="ChildDataPIN.DAl.BASE.FK_Entidad_EstadoEntidad">
+            <End Role="EstadoEntidad" EntitySet="EstadoEntidad" />
+            <End Role="Entidad" EntitySet="Entidad" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Coordinador">
+          <Key>
+            <PropertyRef Name="IdCoordinador" />
+          </Key>
+          <Property Type="Guid" Name="IdCoordinador" Nullable="false" />
+          <Property Type="Guid" Name="IdEntidad" Nullable="false" />
+          <Property Type="String" Name="Codigo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Guid" Name="IdEstadoCoordinador" Nullable="false" />
+          <Property Type="String" Name="Nota" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Guid" Name="CreadoPorIdUsuario" Nullable="false" />
+          <Property Type="String" Name="CreadoEn" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreadoEl" Nullable="false" />
+          <Property Type="Guid" Name="ModificadoPorIdUsuario" Nullable="false" />
+          <Property Type="String" Name="ModificadoEn" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="ModificadoEl" Nullable="false" />
+          <NavigationProperty Name="Entidad" Relationship="ChildDataPIN.DAl.BASE.FK_Coordinador_Entidad" FromRole="Coordinador" ToRole="Entidad" />
+          <NavigationProperty Name="EstadoCoordinador" Relationship="ChildDataPIN.DAl.BASE.FK_Coordinador_EstadoCoordinador" FromRole="Coordinador" ToRole="EstadoCoordinador" />
+        </EntityType>
+        <EntityType Name="Entidad">
+          <Key>
+            <PropertyRef Name="IdEntidad" />
+          </Key>
+          <Property Type="Guid" Name="IdEntidad" Nullable="false" />
+          <Property Type="Guid" Name="IdTipoEntidad" Nullable="false" />
+          <Property Type="Guid" Name="IdEstadoEntidad" Nullable="false" />
+          <Property Type="Guid" Name="IdTipoIdentificacion" Nullable="false" />
+          <Property Type="String" Name="CodigoIdentificacion" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Direccion" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Telefono" />
+          <Property Type="String" Name="Email" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="Guid" Name="CreadoPorIdUsuario" Nullable="false" />
+          <Property Type="String" Name="CreadoEn" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreadoEl" Nullable="false" />
+          <Property Type="Guid" Name="ModificadoPorIdUsuario" Nullable="false" />
+          <Property Type="String" Name="ModificadoEn" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="ModificadoEl" Nullable="false" />
+          <NavigationProperty Name="Coordinador" Relationship="ChildDataPIN.DAl.BASE.FK_Coordinador_Entidad" FromRole="Entidad" ToRole="Coordinador" />
+          <NavigationProperty Name="Persona" Relationship="ChildDataPIN.DAl.BASE.FK_Persona_Entidad1" FromRole="Entidad" ToRole="Persona" />
+          <NavigationProperty Name="EstadoEntidad" Relationship="ChildDataPIN.DAl.BASE.FK_Entidad_EstadoEntidad" FromRole="Entidad" ToRole="EstadoEntidad" />
+        </EntityType>
+        <EntityType Name="EstadoCoordinador">
+          <Key>
+            <PropertyRef Name="IdEstadoCoordinador" />
+          </Key>
+          <Property Type="Guid" Name="IdEstadoCoordinador" Nullable="false" />
+          <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="Guid" Name="CreadoPorIdUsuario" Nullable="false" />
+          <Property Type="String" Name="CreadoEn" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreadoEl" Nullable="false" />
+          <Property Type="Guid" Name="ModificadoPorIdUsuario" Nullable="false" />
+          <Property Type="String" Name="ModificadoEn" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="ModificadoEl" Nullable="false" />
+          <NavigationProperty Name="Coordinador" Relationship="ChildDataPIN.DAl.BASE.FK_Coordinador_EstadoCoordinador" FromRole="EstadoCoordinador" ToRole="Coordinador" />
+        </EntityType>
+        <Association Name="FK_Coordinador_Entidad">
+          <End Type="ChildDataPIN.DAl.BASE.Entidad" Role="Entidad" Multiplicity="1" />
+          <End Type="ChildDataPIN.DAl.BASE.Coordinador" Role="Coordinador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Entidad">
+              <PropertyRef Name="IdEntidad" />
+            </Principal>
+            <Dependent Role="Coordinador">
+              <PropertyRef Name="IdEntidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Coordinador_EstadoCoordinador">
+          <End Type="ChildDataPIN.DAl.BASE.EstadoCoordinador" Role="EstadoCoordinador" Multiplicity="1" />
+          <End Type="ChildDataPIN.DAl.BASE.Coordinador" Role="Coordinador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EstadoCoordinador">
+              <PropertyRef Name="IdEstadoCoordinador" />
+            </Principal>
+            <Dependent Role="Coordinador">
+              <PropertyRef Name="IdEstadoCoordinador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="EstadoPersona">
+          <Key>
+            <PropertyRef Name="IdEstadoPersona" />
+          </Key>
+          <Property Type="Guid" Name="IdEstadoPersona" Nullable="false" />
+          <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="Guid" Name="CreadoPorIdUsuario" Nullable="false" />
+          <Property Type="String" Name="CreadoEn" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreadoEl" Nullable="false" />
+          <Property Type="Guid" Name="ModificadoPorIdUsuario" Nullable="false" />
+          <Property Type="String" Name="ModificadoEn" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="ModificadoEl" Nullable="false" />
+          <NavigationProperty Name="Persona" Relationship="ChildDataPIN.DAl.BASE.FK_Persona_EstadoPersona" FromRole="EstadoPersona" ToRole="Persona" />
+        </EntityType>
+        <EntityType Name="Persona">
+          <Key>
+            <PropertyRef Name="IdPersona" />
+          </Key>
+          <Property Type="Guid" Name="IdPersona" Nullable="false" />
+          <Property Type="Guid" Name="IdEntidad" Nullable="false" />
+          <Property Type="Guid" Name="IdEstadoPersona" Nullable="false" />
+          <Property Type="String" Name="PrimerNombre" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SegundoNombre" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PrimerApellido" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SegundoApellido" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Celular" />
+          <Property Type="Guid" Name="IdTipoSexo" Nullable="false" />
+          <Property Type="String" Name="FechaNacimiento" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Nota" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Guid" Name="CreadoPorIdUsuario" Nullable="false" />
+          <Property Type="String" Name="CreadoEn" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreadoEl" Nullable="false" />
+          <Property Type="Guid" Name="ModificadoPorIdUsuario" Nullable="false" />
+          <Property Type="String" Name="ModificadoEn" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="ModificadoEl" Nullable="false" />
+          <NavigationProperty Name="Entidad" Relationship="ChildDataPIN.DAl.BASE.FK_Persona_Entidad1" FromRole="Persona" ToRole="Entidad" />
+          <NavigationProperty Name="EstadoPersona" Relationship="ChildDataPIN.DAl.BASE.FK_Persona_EstadoPersona" FromRole="Persona" ToRole="EstadoPersona" />
+        </EntityType>
+        <EntityType Name="EntidadVistaBasePersona">
+          <Key>
+            <PropertyRef Name="IdEntidad" />
+          </Key>
+          <Property Type="Guid" Name="IdEntidad" Nullable="false" />
+          <Property Type="String" Name="NombreCompleto" Nullable="false" MaxLength="603" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Sexo" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="Guid" Name="IdEstadoEntidad" Nullable="false" />
+          <Property Type="String" Name="EstadoEntidad" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_Persona_Entidad1">
+          <End Type="ChildDataPIN.DAl.BASE.Entidad" Role="Entidad" Multiplicity="1" />
+          <End Type="ChildDataPIN.DAl.BASE.Persona" Role="Persona" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Entidad">
+              <PropertyRef Name="IdEntidad" />
+            </Principal>
+            <Dependent Role="Persona">
+              <PropertyRef Name="IdEntidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Persona_EstadoPersona">
+          <End Type="ChildDataPIN.DAl.BASE.EstadoPersona" Role="EstadoPersona" Multiplicity="1" />
+          <End Type="ChildDataPIN.DAl.BASE.Persona" Role="Persona" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EstadoPersona">
+              <PropertyRef Name="IdEstadoPersona" />
+            </Principal>
+            <Dependent Role="Persona">
+              <PropertyRef Name="IdEstadoPersona" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="CoordinadorVista">
+          <Key>
+            <PropertyRef Name="IdCoordinador" />
+          </Key>
+          <Property Type="Guid" Name="IdCoordinador" Nullable="false" />
+          <Property Type="Guid" Name="IdEntidad" Nullable="false" />
+          <Property Type="String" Name="NombreCompleto" Nullable="false" MaxLength="603" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Sexo" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Codigo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Guid" Name="IdEstadoCoordinador" Nullable="false" />
+          <Property Type="String" Name="EstadoCoordinador" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Nota" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Guid" Name="CreadoPorIdUsuario" Nullable="false" />
+          <Property Type="String" Name="CreadoPorUsuario" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CreadoEn" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreadoEl" Nullable="false" />
+          <Property Type="Guid" Name="ModificadoPorIdUsuario" Nullable="false" />
+          <Property Type="String" Name="ModificadoPorUsuario" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ModificadoEn" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="ModificadoEl" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EntidadVista">
+          <Key>
+            <PropertyRef Name="IdEntidad" />
+            <PropertyRef Name="IdTipoEntidad" />
+            <PropertyRef Name="TipoEntidad" />
+            <PropertyRef Name="IdEstadoEntidad" />
+            <PropertyRef Name="EstadoEntidad" />
+            <PropertyRef Name="IdTipoIdentificacion" />
+            <PropertyRef Name="TipoIdentificacion" />
+            <PropertyRef Name="CodigoIdentificacion" />
+            <PropertyRef Name="CreadoPorIdUsuario" />
+            <PropertyRef Name="CreadoPorUsuario" />
+            <PropertyRef Name="CreadoEn" />
+            <PropertyRef Name="CreadoEl" />
+            <PropertyRef Name="ModificadoPorIdUsuario" />
+            <PropertyRef Name="ModificadoPorUsuario" />
+            <PropertyRef Name="ModificadoEn" />
+            <PropertyRef Name="ModificadoEl" />
+          </Key>
+          <Property Type="Guid" Name="IdEntidad" Nullable="false" />
+          <Property Type="Guid" Name="IdTipoEntidad" Nullable="false" />
+          <Property Type="String" Name="TipoEntidad" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="Guid" Name="IdEstadoEntidad" Nullable="false" />
+          <Property Type="String" Name="EstadoEntidad" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="Guid" Name="IdTipoIdentificacion" Nullable="false" />
+          <Property Type="String" Name="TipoIdentificacion" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CodigoIdentificacion" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Direccion" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Telefono" />
+          <Property Type="String" Name="Email" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PrimerNombre" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SegundoNombre" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PrimerApellido" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SegundoApellido" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Celular" />
+          <Property Type="Guid" Name="IdTipoSexo" />
+          <Property Type="String" Name="TipoSexo" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FechaNacimiento" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Nota" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Organizacion" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="Guid" Name="CreadoPorIdUsuario" Nullable="false" />
+          <Property Type="String" Name="CreadoPorUsuario" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CreadoEn" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreadoEl" Nullable="false" />
+          <Property Type="Guid" Name="ModificadoPorIdUsuario" Nullable="false" />
+          <Property Type="String" Name="ModificadoPorUsuario" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ModificadoEn" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="ModificadoEl" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EstadoEntidad">
+          <Key>
+            <PropertyRef Name="IdEstadoEntidad" />
+          </Key>
+          <Property Type="Guid" Name="IdEstadoEntidad" Nullable="false" />
+          <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="Guid" Name="CreadoPorIdUsuario" Nullable="false" />
+          <Property Type="String" Name="CreadoEn" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreadoEl" Nullable="false" />
+          <Property Type="Guid" Name="ModificadoPorIdUsuario" Nullable="false" />
+          <Property Type="String" Name="ModificadoEn" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="ModificadoEl" Nullable="false" />
+          <NavigationProperty Name="Entidad" Relationship="ChildDataPIN.DAl.BASE.FK_Entidad_EstadoEntidad" FromRole="EstadoEntidad" ToRole="Entidad" />
+        </EntityType>
+        <Association Name="FK_Entidad_EstadoEntidad">
+          <End Type="ChildDataPIN.DAl.BASE.EstadoEntidad" Role="EstadoEntidad" Multiplicity="1" />
+          <End Type="ChildDataPIN.DAl.BASE.Entidad" Role="Entidad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EstadoEntidad">
+              <PropertyRef Name="IdEstadoEntidad" />
+            </Principal>
+            <Dependent Role="Entidad">
+              <PropertyRef Name="IdEstadoEntidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ChildDataPINDAlBASEStoreContainer" CdmEntityContainer="BaseEntities">
+          <EntitySetMapping Name="Coordinador">
+            <EntityTypeMapping TypeName="ChildDataPIN.DAl.BASE.Coordinador">
+              <MappingFragment StoreEntitySet="Coordinador">
+                <ScalarProperty Name="ModificadoEl" ColumnName="ModificadoEl" />
+                <ScalarProperty Name="ModificadoEn" ColumnName="ModificadoEn" />
+                <ScalarProperty Name="ModificadoPorIdUsuario" ColumnName="ModificadoPorIdUsuario" />
+                <ScalarProperty Name="CreadoEl" ColumnName="CreadoEl" />
+                <ScalarProperty Name="CreadoEn" ColumnName="CreadoEn" />
+                <ScalarProperty Name="CreadoPorIdUsuario" ColumnName="CreadoPorIdUsuario" />
+                <ScalarProperty Name="Nota" ColumnName="Nota" />
+                <ScalarProperty Name="IdEstadoCoordinador" ColumnName="IdEstadoCoordinador" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="IdEntidad" ColumnName="IdEntidad" />
+                <ScalarProperty Name="IdCoordinador" ColumnName="IdCoordinador" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Entidad">
+            <EntityTypeMapping TypeName="ChildDataPIN.DAl.BASE.Entidad">
+              <MappingFragment StoreEntitySet="Entidad">
+                <ScalarProperty Name="ModificadoEl" ColumnName="ModificadoEl" />
+                <ScalarProperty Name="ModificadoEn" ColumnName="ModificadoEn" />
+                <ScalarProperty Name="ModificadoPorIdUsuario" ColumnName="ModificadoPorIdUsuario" />
+                <ScalarProperty Name="CreadoEl" ColumnName="CreadoEl" />
+                <ScalarProperty Name="CreadoEn" ColumnName="CreadoEn" />
+                <ScalarProperty Name="CreadoPorIdUsuario" ColumnName="CreadoPorIdUsuario" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="CodigoIdentificacion" ColumnName="CodigoIdentificacion" />
+                <ScalarProperty Name="IdTipoIdentificacion" ColumnName="IdTipoIdentificacion" />
+                <ScalarProperty Name="IdEstadoEntidad" ColumnName="IdEstadoEntidad" />
+                <ScalarProperty Name="IdTipoEntidad" ColumnName="IdTipoEntidad" />
+                <ScalarProperty Name="IdEntidad" ColumnName="IdEntidad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EstadoCoordinador">
+            <EntityTypeMapping TypeName="ChildDataPIN.DAl.BASE.EstadoCoordinador">
+              <MappingFragment StoreEntitySet="EstadoCoordinador">
+                <ScalarProperty Name="ModificadoEl" ColumnName="ModificadoEl" />
+                <ScalarProperty Name="ModificadoEn" ColumnName="ModificadoEn" />
+                <ScalarProperty Name="ModificadoPorIdUsuario" ColumnName="ModificadoPorIdUsuario" />
+                <ScalarProperty Name="CreadoEl" ColumnName="CreadoEl" />
+                <ScalarProperty Name="CreadoEn" ColumnName="CreadoEn" />
+                <ScalarProperty Name="CreadoPorIdUsuario" ColumnName="CreadoPorIdUsuario" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="IdEstadoCoordinador" ColumnName="IdEstadoCoordinador" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="CoordinadorInsertar" FunctionName="ChildDataPIN.DAl.BASE.Store.CoordinadorInsertar" />
+          <FunctionImportMapping FunctionImportName="CoordinadorActualizar" FunctionName="ChildDataPIN.DAl.BASE.Store.CoordinadorActualizar" />
+          <FunctionImportMapping FunctionImportName="CoordinadorCambioDeEstado" FunctionName="ChildDataPIN.DAl.BASE.Store.CoordinadorCambioDeEstado" />
+          <EntitySetMapping Name="EstadoPersona">
+            <EntityTypeMapping TypeName="ChildDataPIN.DAl.BASE.EstadoPersona">
+              <MappingFragment StoreEntitySet="EstadoPersona">
+                <ScalarProperty Name="ModificadoEl" ColumnName="ModificadoEl" />
+                <ScalarProperty Name="ModificadoEn" ColumnName="ModificadoEn" />
+                <ScalarProperty Name="ModificadoPorIdUsuario" ColumnName="ModificadoPorIdUsuario" />
+                <ScalarProperty Name="CreadoEl" ColumnName="CreadoEl" />
+                <ScalarProperty Name="CreadoEn" ColumnName="CreadoEn" />
+                <ScalarProperty Name="CreadoPorIdUsuario" ColumnName="CreadoPorIdUsuario" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="IdEstadoPersona" ColumnName="IdEstadoPersona" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Persona">
+            <EntityTypeMapping TypeName="ChildDataPIN.DAl.BASE.Persona">
+              <MappingFragment StoreEntitySet="Persona">
+                <ScalarProperty Name="ModificadoEl" ColumnName="ModificadoEl" />
+                <ScalarProperty Name="ModificadoEn" ColumnName="ModificadoEn" />
+                <ScalarProperty Name="ModificadoPorIdUsuario" ColumnName="ModificadoPorIdUsuario" />
+                <ScalarProperty Name="CreadoEl" ColumnName="CreadoEl" />
+                <ScalarProperty Name="CreadoEn" ColumnName="CreadoEn" />
+                <ScalarProperty Name="CreadoPorIdUsuario" ColumnName="CreadoPorIdUsuario" />
+                <ScalarProperty Name="Nota" ColumnName="Nota" />
+                <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+                <ScalarProperty Name="IdTipoSexo" ColumnName="IdTipoSexo" />
+                <ScalarProperty Name="Celular" ColumnName="Celular" />
+                <ScalarProperty Name="SegundoApellido" ColumnName="SegundoApellido" />
+                <ScalarProperty Name="PrimerApellido" ColumnName="PrimerApellido" />
+                <ScalarProperty Name="SegundoNombre" ColumnName="SegundoNombre" />
+                <ScalarProperty Name="PrimerNombre" ColumnName="PrimerNombre" />
+                <ScalarProperty Name="IdEstadoPersona" ColumnName="IdEstadoPersona" />
+                <ScalarProperty Name="IdEntidad" ColumnName="IdEntidad" />
+                <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EntidadVistaBasePersona">
+            <EntityTypeMapping TypeName="ChildDataPIN.DAl.BASE.EntidadVistaBasePersona">
+              <MappingFragment StoreEntitySet="EntidadVistaBasePersona">
+                <ScalarProperty Name="EstadoEntidad" ColumnName="EstadoEntidad" />
+                <ScalarProperty Name="IdEstadoEntidad" ColumnName="IdEstadoEntidad" />
+                <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+                <ScalarProperty Name="NombreCompleto" ColumnName="NombreCompleto" />
+                <ScalarProperty Name="IdEntidad" ColumnName="IdEntidad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CoordinadorVista">
+            <EntityTypeMapping TypeName="ChildDataPIN.DAl.BASE.CoordinadorVista">
+              <MappingFragment StoreEntitySet="CoordinadorVista">
+                <ScalarProperty Name="ModificadoEl" ColumnName="ModificadoEl" />
+                <ScalarProperty Name="ModificadoEn" ColumnName="ModificadoEn" />
+                <ScalarProperty Name="ModificadoPorUsuario" ColumnName="ModificadoPorUsuario" />
+                <ScalarProperty Name="ModificadoPorIdUsuario" ColumnName="ModificadoPorIdUsuario" />
+                <ScalarProperty Name="CreadoEl" ColumnName="CreadoEl" />
+                <ScalarProperty Name="CreadoEn" ColumnName="CreadoEn" />
+                <ScalarProperty Name="CreadoPorUsuario" ColumnName="CreadoPorUsuario" />
+                <ScalarProperty Name="CreadoPorIdUsuario" ColumnName="CreadoPorIdUsuario" />
+                <ScalarProperty Name="Nota" ColumnName="Nota" />
+                <ScalarProperty Name="EstadoCoordinador" ColumnName="EstadoCoordinador" />
+                <ScalarProperty Name="IdEstadoCoordinador" ColumnName="IdEstadoCoordinador" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+                <ScalarProperty Name="NombreCompleto" ColumnName="NombreCompleto" />
+                <ScalarProperty Name="IdEntidad" ColumnName="IdEntidad" />
+                <ScalarProperty Name="IdCoordinador" ColumnName="IdCoordinador" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EntidadVista">
+            <EntityTypeMapping TypeName="ChildDataPIN.DAl.BASE.EntidadVista">
+              <MappingFragment StoreEntitySet="EntidadVista">
+                <ScalarProperty Name="ModificadoEl" ColumnName="ModificadoEl" />
+                <ScalarProperty Name="ModificadoEn" ColumnName="ModificadoEn" />
+                <ScalarProperty Name="ModificadoPorUsuario" ColumnName="ModificadoPorUsuario" />
+                <ScalarProperty Name="ModificadoPorIdUsuario" ColumnName="ModificadoPorIdUsuario" />
+                <ScalarProperty Name="CreadoEl" ColumnName="CreadoEl" />
+                <ScalarProperty Name="CreadoEn" ColumnName="CreadoEn" />
+                <ScalarProperty Name="CreadoPorUsuario" ColumnName="CreadoPorUsuario" />
+                <ScalarProperty Name="CreadoPorIdUsuario" ColumnName="CreadoPorIdUsuario" />
+                <ScalarProperty Name="Organizacion" ColumnName="Organizacion" />
+                <ScalarProperty Name="Nota" ColumnName="Nota" />
+                <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+                <ScalarProperty Name="TipoSexo" ColumnName="TipoSexo" />
+                <ScalarProperty Name="IdTipoSexo" ColumnName="IdTipoSexo" />
+                <ScalarProperty Name="Celular" ColumnName="Celular" />
+                <ScalarProperty Name="SegundoApellido" ColumnName="SegundoApellido" />
+                <ScalarProperty Name="PrimerApellido" ColumnName="PrimerApellido" />
+                <ScalarProperty Name="SegundoNombre" ColumnName="SegundoNombre" />
+                <ScalarProperty Name="PrimerNombre" ColumnName="PrimerNombre" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="CodigoIdentificacion" ColumnName="CodigoIdentificacion" />
+                <ScalarProperty Name="TipoIdentificacion" ColumnName="TipoIdentificacion" />
+                <ScalarProperty Name="IdTipoIdentificacion" ColumnName="IdTipoIdentificacion" />
+                <ScalarProperty Name="EstadoEntidad" ColumnName="EstadoEntidad" />
+                <ScalarProperty Name="IdEstadoEntidad" ColumnName="IdEstadoEntidad" />
+                <ScalarProperty Name="TipoEntidad" ColumnName="TipoEntidad" />
+                <ScalarProperty Name="IdTipoEntidad" ColumnName="IdTipoEntidad" />
+                <ScalarProperty Name="IdEntidad" ColumnName="IdEntidad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="EntidadInsertar" FunctionName="ChildDataPIN.DAl.BASE.Store.EntidadInsertar" />
+          <FunctionImportMapping FunctionImportName="EntidadActualizar" FunctionName="ChildDataPIN.DAl.BASE.Store.EntidadActualizar" />
+          <EntitySetMapping Name="EstadoEntidad">
+            <EntityTypeMapping TypeName="ChildDataPIN.DAl.BASE.EstadoEntidad">
+              <MappingFragment StoreEntitySet="EstadoEntidad">
+                <ScalarProperty Name="ModificadoEl" ColumnName="ModificadoEl" />
+                <ScalarProperty Name="ModificadoEn" ColumnName="ModificadoEn" />
+                <ScalarProperty Name="ModificadoPorIdUsuario" ColumnName="ModificadoPorIdUsuario" />
+                <ScalarProperty Name="CreadoEl" ColumnName="CreadoEl" />
+                <ScalarProperty Name="CreadoEn" ColumnName="CreadoEn" />
+                <ScalarProperty Name="CreadoPorIdUsuario" ColumnName="CreadoPorIdUsuario" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="IdEstadoEntidad" ColumnName="IdEstadoEntidad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="BaseEntities">
+        <EntityTypeShape EntityType="ChildDataPIN.DAl.BASE.Coordinador" Width="1.5" PointX="3.75" PointY="0.5" Height="3.0714322916666656" />
+        <EntityTypeShape EntityType="ChildDataPIN.DAl.BASE.Entidad" Width="1.5" PointX="0.5" PointY="0.5" Height="3.400126953125" />
+        <EntityTypeShape EntityType="ChildDataPIN.DAl.BASE.EstadoCoordinador" Width="1.5" PointX="0.5" PointY="5" Height="2.4140429687499996" />
+        <AssociationConnector Association="ChildDataPIN.DAl.BASE.FK_Coordinador_Entidad" >
+          <ConnectorPoint PointX="2" PointY="2.2593489583333328" />
+          <ConnectorPoint PointX="3.75" PointY="2.2593489583333328" />
+        </AssociationConnector>
+        <AssociationConnector Association="ChildDataPIN.DAl.BASE.FK_Coordinador_EstadoCoordinador" >
+          <ConnectorPoint PointX="2" PointY="6.37474609375" />
+          <ConnectorPoint PointX="4.5" PointY="6.37474609375" />
+          <ConnectorPoint PointX="4.5" PointY="4.0186979166666656" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="ChildDataPIN.DAl.BASE.EstadoPersona" Width="2.375" PointX="4.5" PointY="9.625" Height="2.4140429687499996" />
+        <EntityTypeShape EntityType="ChildDataPIN.DAl.BASE.Persona" Width="2" PointX="6.75" PointY="0.75" Height="4.0575162760416656" />
+        <EntityTypeShape EntityType="ChildDataPIN.DAl.BASE.EntidadVistaBasePersona" Width="2.625" PointX="5.75" PointY="6" Height="1.7566536458333335" IsExpanded="true" />
+        <AssociationConnector Association="ChildDataPIN.DAl.BASE.FK_Persona_Entidad1" >
+          <ConnectorPoint PointX="2" PointY="4.43455078125" />
+          <ConnectorPoint PointX="4.416666666666667" PointY="4.4345507812499987" />
+          <ConnectorPoint PointX="4.583333333333333" PointY="4.43455078125" />
+          <ConnectorPoint PointX="6.75" PointY="4.43455078125" />
+        </AssociationConnector>
+        <AssociationConnector Association="ChildDataPIN.DAl.BASE.FK_Persona_EstadoPersona" >
+          <ConnectorPoint PointX="5.5" PointY="9.625" />
+          <ConnectorPoint PointX="5.5" PointY="4.2996041438802086" />
+          <ConnectorPoint PointX="6.75" PointY="4.2996041438802086" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="ChildDataPIN.DAl.BASE.CoordinadorVista" Width="2.125" PointX="0.75" PointY="8.75" Height="3.5644742838541674" />
+        <EntityTypeShape EntityType="ChildDataPIN.DAl.BASE.EntidadVista" Width="1.5" PointX="7.375" PointY="8.75" Height="6.5955208333333353" />
+        <EntityTypeShape EntityType="ChildDataPIN.DAl.BASE.EstadoEntidad" Width="1.5" PointX="1.25" PointY="14.25" Height="2.7494921875000014" />
+        <AssociationConnector Association="ChildDataPIN.DAl.BASE.FK_Entidad_EstadoEntidad" >
+          <ConnectorPoint PointX="1.2511528461538464" PointY="14.25" />
+          <ConnectorPoint PointX="0.87615284615384681" PointY="13.875" />
+          <ConnectorPoint PointX="0.125" PointY="13.875" />
+          <ConnectorPoint PointX="0.125" PointY="5.1629036458333335" />
+          <ConnectorPoint PointX="0.5" PointY="4.7879036458333335" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+        <title>Untitled Document</title>
+        <link rel="stylesheet" type="text/css" href="../../resources/css/ext-all.css" />
+        <script type="text/javascript" src="../../adapter/ext/ext-base.js">
+        </script>
+        <script type="text/javascript" src="../../ext-all-debug.js">
+        </script>
+        <script type="text/javascript">
+            // Temporarily ensure that the passed element (and all ancestors)
+            // is display:block for the calling of the specified function
+            
+            /*function ensureLayout(elm, func, scope)
+            {
+                var r, e = Ext.get(elm), elmStyle = elm.style, oldDisp = elmStyle.display, wasXHidden = e.hasClass('x-hide-display');
+                
+                if (wasXHidden) 
+                {
+                    e.removeClass('x-hide-display');
+                }
+                elmStyle.display = "block";
+                if (!elm.offsetWidth) 
+                {
+                    r = ensureLayout(elm.parentNode, func, scope);
+                }
+                else 
+                {
+                    r = func.call(scope || window);
+                }
+                elmStyle.display = oldDisp;
+                if (wasXHidden) 
+                {
+                    e.addClass('x-hide-display');
+                }
+                return r;
+            }
+            
+			Ext.override(Ext.form.TriggerField, 
+            {
+                adjustWidth: function(tag, w)
+                {
+                    if (typeof w == 'number' && (Ext.isIE && (Ext.isIE6 || !Ext.isStrict)) && /input|textarea/i.test(tag) && !this.inEditor) 
+                    {
+                        return w - 3;
+                    }
+                    return w;
+                    
+                },
+                onResize: function(w, h)
+                {
+                    ensureLayout(this.wrap.dom, function()
+                    {
+                        Ext.form.TriggerField.superclass.onResize.call(this, w, h);
+                        var tw = this.trigger.getWidth();
+                        if (typeof w == 'number') 
+                        
+                        
+                        {
+                            this.el.setWidth(this.adjustWidth('input', w - tw));
+                            
+                        }
+                        this.wrap.setWidth(w);
+                    }, this);
+                }
+            });*/
+			
+            Ext.ux.TwinTriggerCombo = Ext.extend(Ext.form.ComboBox, 
+            {
+                initComponent: function()
+                {
+                    this.triggerConfig = 
+                    {
+                        tag: 'span',
+                        cls: 'x-form-twin-triggers',
+                        cn: [
+                        {
+                            tag: "img",
+                            src: Ext.BLANK_IMAGE_URL,
+                            cls: "x-form-trigger " + this.trigger1Class
+                        }, 
+                        {
+                            tag: "img",
+                            src: Ext.BLANK_IMAGE_URL,
+                            cls: "x-form-trigger " + this.trigger2Class
+                        }]
+                    };
+                    this.onTrigger2Click = this.onTrigger2Click.createInterceptor(function()
+                    {
+                        this.collapse();
+                    });
+                    
+                    Ext.ux.TwinTriggerCombo.superclass.initComponent.call(this);
+                    
+                    /*var tw = this.trigger.getWidth() || (17 * (this.timeFields.length+1));
+                     var elw = this.el.getWidth();
+                     if(typeof w == 'number'){
+                     elw = this.adjustWidth('input', w - tw);
+                     this.el.setWidth(elw);
+                     }
+                     this.wrap.setWidth(elw+tw);*/
+                },
+                getTrigger: Ext.form.TwinTriggerField.prototype.getTrigger,
+                initTrigger: Ext.form.TwinTriggerField.prototype.initTrigger,
+                onTrigger1Click: Ext.form.ComboBox.prototype.onTriggerClick,
+                trigger1Class: Ext.form.ComboBox.prototype.triggerClass
+            });
+            
+            Ext.reg('combotrigger', Ext.ux.TwinTriggerCombo);
+            
+            fields = [
+            {
+                xtype: 'combo',
+                fieldLabel: 'combo',
+				anchor:'100%',
+            }, 
+            {
+                xtype: 'combotrigger',
+                fieldLabel: 'twincombo',
+				hideMode: 'offsets',
+				anchor:'100%',
+                onTrigger2Click: function()
+                {
+                }
+            }]
+            
+            Ext.onReady(function()
+            {
+                new Ext.FormPanel(
+                {
+                    renderTo: Ext.get('catalog_div'),
+                    items: [
+                    {
+                        xtype: 'fieldset',
+                        collapsible: true,
+                        title: 'collapsible fieldset',
+                        collapsed: false,
+                        height: 100,
+                        items: fields
+                    }]
+                })
+            });
+        </script>
+    </head>
+    <body>
+        <div id="catalog_div">
+        </div>
+    </body>
+</html>
